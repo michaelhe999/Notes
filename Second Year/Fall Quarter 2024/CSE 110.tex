@@ -28,6 +28,8 @@
 \usepackage{algorithmicx}
 \usepackage{tcolorbox}
 
+\newcommand{\tab}{~~~~}
+
 \begin{document}
 \begin{center}
     \textbf{\Large{CSE 110 Notes}}
@@ -80,5 +82,89 @@ Submit peer feedback every week, and TAs will give scores in Independence, Teamw
 \textbf{Vision document} to say what you plan to create\\
 A \textbf{mockup} will show the application in detail\\
 In \textbf{five sprints}, build the app\\
+\section{9/30}
+\textbf{Requirements Engineering} - trying to figure out what is needed and record that down to communicate to the team\\
+Goal is to elicit requirements from stakeholders through interviews\\
+Write user stories according to the INVEST criteria\\
+Stakeholder: "person with an interest or concern in something, particularly a business"\\
+Methods: \\
+Survey -- might not know what to count\\
+Interviews -- better\\
+Focus groups -- more participants, less time, but quiet people may not be heard\\
+How to write questions: \\
+Can cause biases if the wording is not neutral\\
+Needs to be simple, open-ended, speak the user's language, and ask for demonstrations or recall of concrete events\\
+Recording data: write notes, or record audio and transcribe\\
+Rapport: Be non-judgmental\\
+Conducting the interview: \\
+\tab Start with easy questions\\
+\tab Listen and provide opportunities for the interviewee to continue\\
+\tab Ask for clarification\\
+Express requirements as User Stories - "As a [role], I want [something] so that [need]"\\
+User story criteria: INVEST\\
+Independent, Negotiable, Valuable, Estimable, Small, Testable\\
+\tab Independent: want to implement requirements in any order - helps with collaboration\\
+\tab Negotiable: can be changed during development; user story doesn't specify everything\\
+\tab Valuable: provides value to the user\\
+\tab Estimable: keeps the size small, need to complete user story in 1-2 weeks or less\\
+\tab Small: Fit on a 3x5 card, at most two person-weeks of work -- too big means unable to estimate, can't finish in time for delivery\\
+\tab Testable: can be tested to see if it is done or not\\
+\section{10/2}
+What makes software great?\\
+\tab User stories aren't enough -- lots of ways to write the code\\
+\tab How to figure out which implementation is desided?\\
+\tab Goal is to learn \textit{abstraction} - key to writing good software\\
+\tab Learn key principles for making software maintainable\\
+Quality Attributes: \\
+\tab Express "non-functional" requirements\\
+\tab Not what the system should do, but how it should do it\\
+\tab Examples: modifiability, maintainability, performance, robustness\\
+\tab Good design promotes some quality attributes, sometimes at the expense of other\\
+High level design is called "architecture"\\
+SOLID Principles for Design:\\
+\tab Single Responsibility Principle (SRP): a class should be responsible for one thing\\
+\begin{itemize}
+    \item Thing, capability, computation
+    \item Object only does its own calculations
+    \item Don't cram related functionality into one class
+    \item Helps know where to find code and prevents propogation of mistakes
+\end{itemize}
+\tab Open/Closed Principle: a class should be open for extension, but closed for modification
+\begin{itemize}
+    \item Can extend class without modifying it
+\end{itemize}
+\tab Liskov Substitution Principle: properties of a class should hold of subclasses
+\begin{itemize}
+    \item Subclasses should be able to be used in place of the superclass
+\end{itemize}
+\tab Interface Segregation Principle: clients shouldn't have to implement interfaces/depend on methods they don't use
+\tab Dependency Inversion Principle: high-level modules should not depend on low-level modules; both should depend on abstractions
+\begin{itemize}
+    \item Abstractions should not depend on details; details should depend on abstractions
+    \item Goal is to avoid tight coupling
+\end{itemize}
+DRY: Don't Repeat Yourself\\
+Each thing or computational idea should be expressed just once in the code\\
+\tab Violations are the result of copy-pasting code or incomplete classes (violate SRP), but also over-specialization of classes\\
+\section{10/4}
+React\\
+Learn the HTML Document Object Model (DOM)\\
+What are web apps? Website that changes depending on what the user does - dynamic web site\\
+\tab Content is interactive\\
+Webpages are trees\\
+Old way was to remake the tree and reload the page\\
+Modern way is to manipulate the DOM\\
+React: don't write HTML directly, write code that emits HTML\\
+\tab React is a framework\\
+\tab A software framework is an abstraction in which software, probiding generic functionality, can be selectively changed with additional user specified code\\
+Instead of writing code in order, write the functions, and framework calls functions in the right order\\
+Frameworks are "opinionated" - designer of a framework has a way they want you to write code\\
+Benefits of a framework: \\
+\tab Provides useful defaults, standard behaviour
+Downsides: \\
+Have to understand how the framework works\\
+Knowledge will be incomplete\\
+
+
 
 \end{document}

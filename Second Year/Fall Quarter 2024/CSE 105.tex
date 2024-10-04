@@ -410,19 +410,24 @@ True or False: \qquad
 \end{comment}
 
 True or False: \qquad 
-   $ab  \in L(~ (a \cup b)^*  ~)$
+   $ab  \in L(~ (a \cup b)^*  ~)$\\
+   True
    
 True or False: \qquad    
-   $ba \in L( ~ a^* b^* ~)$
+   $ba \in L( ~ a^* b^* ~)$\\
+   False
    
 True or False: \qquad 
-   $\varepsilon  \in L(a \cup b \cup c)$
+   $\varepsilon  \in L(a \cup b \cup c)$\\
+    False
    
 True or False: \qquad 
-   $\varepsilon  \in L(~ (a \cup b)^*  ~)$
+   $\varepsilon  \in L(~ (a \cup b)^*  ~)$\\
+    True
 
 True or False: \qquad 
-   $\varepsilon \in L( ~ aa^* \cup bb^* ~)$
+   $\varepsilon \in L( ~ aa^* \cup bb^* ~)$\\
+    False
 
 \vfill
 
@@ -469,25 +474,20 @@ Practice with the regular expressions over $\{a,b\}$ below.
 
 For example: Which regular expression(s) below describe a language that includes the string $a$ as an element?
 
-$a^* b^*$ 
+$a^* b^*$ \\
+Includes
 
-\vfill
+$a(ba)^* b$ \\
+Doesn't include
 
-$a(ba)^* b$
+$a^* \cup b^*$\\
+Includes
 
-\vfill
+$(aaa)^*$\\
+Doesn't include
 
-$a^* \cup b^*$
-
-\vfill
-
-$(aaa)^*$
-
-\vfill
-
-$(\varepsilon \cup a) b$
-
-\vfill 
+$(\varepsilon \cup a) b$\\
+Doesn't include
 
 \newpage
 \subsection*{Week 1 Friday: Finite automata}

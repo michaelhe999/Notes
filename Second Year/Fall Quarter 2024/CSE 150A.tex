@@ -28,6 +28,8 @@
 \usepackage{algorithmicx}
 \usepackage{minted}
 
+\newcommand{\tab}{~~~~}
+
 \begin{document}
 \begin{center}
     \textbf{\Large{CSE 150A Notes}}
@@ -66,5 +68,19 @@ Does not cover:
     \item Genetic algorithms
     \item Philosophy of AI
 \end{itemize}
+\section{10/1}
+Probability Theory: how knowledge affects belief (Poole and Mackworth)\\
+This view is known as the Bayesian view of probability\\
+\tab Other view is the frequentist view; probability is the limit of the relative frequency of an event\\
+Discrete Random Variables: denoted with capital letters\\
+Domain of possible values for a variable, denoted with lowercase letters\\
+Uncoditional (prior) probability: $P(X = x)$\\
+Axioms of Probability:\\
+\tab $P(X = x) \geq 0$\\
+\tab $\sum_{i=1}^n P(X = x_i) = 1$\\
+\tab $P(X = x_i \text{ or } X = x_j) = P(X = x_i) + P(X = x_j) \text{ iff } x_i \neq x_j$\\
+Conditional Probability: $P(X = x_i | Y = y_j)$\\
+In this case X and Y are dependent\\
+Bayes rule: $P(X = x_i | Y = y_j) = \frac{P(Y = y_j | X = x_i)P(X = x_i)}{P(Y = y_j)}$\\
 
 \end{document}
