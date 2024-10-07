@@ -164,6 +164,27 @@ Benefits of a framework: \\
 Downsides: \\
 Have to understand how the framework works\\
 Knowledge will be incomplete\\
+\section{10/7}
+Design Patterns\\
+Same problems in multiple contexts\\
+"each pattern represents our current best guess as to what arrangement of the physical environment will work to solve the problem presented. The empirical
+questions center on the problem---does it occur and is it felt in the way we describe it? ---and the solution---does the arrangement we propose solve the problem?"\\
+Object-oriented design patterns: so common\\
+Each pattern solves certain problems, but not all problems can be solved with named patterns\\
+Factory pattern: \\
+\tab Object needs to be hooked up, or which object to create depends on something\\
+\tab Repeating this pattern violates DRY, so put the logic in a "factory"\\
+Singleton Pattern:\\
+\tab Sometimes there should only be one of something - only one "factory"\\
+\tab Other examples: logger, cache, thread pool\\
+\tab Use sparingly; a lot like global variables\\
+\tab Private constructors are a good example\\
+Observer Pattern:\\
+\tab Multiple different ways to update one model - different controllers\\
+\tab Model stores state\\
+\tab Views need to know state, but the model shouldn't have to communicate to the different views through controllers\\
+\tab Controllers have to know about the model, but the model shouldn't have to know about the controllers\\
+\tab Model has a notification center, and the controllers \textbf{listen} to the notification center\\
 
 
 
