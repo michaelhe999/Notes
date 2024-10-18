@@ -185,7 +185,152 @@ Observer Pattern:\\
 \tab Views need to know state, but the model shouldn't have to communicate to the different views through controllers\\
 \tab Controllers have to know about the model, but the model shouldn't have to know about the controllers\\
 \tab Model has a notification center, and the controllers \textbf{listen} to the notification center\\
-
-
+\tab Controllers are the Observers
+\section{10/9}
+Why study HCI?
+\tab Software Engineering is about meeting user Needs\\
+\tab Building the wrong software is costly\\
+\tab Apply principles of HCI, iterate, hire a designer\\
+Contextual design: People are experts at their own work, but can't articulate their work process\\
+\tab Observe people in their work environment\\
+\tab Build personas to bring users alive\\
+\tab \tab Personas build empathy, help you think like the user, but are not necessarily real people\\
+\tab Design a prototype with Figma\\
+Principles: \\
+\tab Ways of assessing designs: usability studies, "discount methods" (users are expensive)\\
+Nielsen's 10 Usability Heuristics: \\
+\tab From 1994, but still relevant\\
+\tab No need for user tests, instead, need an expert evaluator\\
+\tab Goal is to identify usability problems\\
+\begin{itemize}
+    \item Visibility of system status: keep users informed about what is going on; progress indicators
+    \item Match between system and the real world: speak the user's language, follow real-world conventions
+    \item User control and freedom: undo, redo, escape, exit
+    \item Consistency and standards: follow platform conventions - people use other products more than yours
+    \item Error prevention: eliminate error-prone conditions, check for errors, confirm before destructive actions
+    \item Recognition rather than recall: minimize memory load, make objects, actions, and options visible
+    \item Flexibility and efficiency of use: accelerators, shortcuts (hidden from novice users), allow users to tailor frequent actions: 
+    novices need discoverability; experts need efficiency
+    \item Aesthetic and minimalist design: don't include information that is irrelevant or rarely needed
+    \item Help users recognize, diagnose, and recover from errors: error messages in plain language, precisely indicate the problem, constructively suggest a solution
+    \item Help and documentation: even though it is better if the system can be used without documentation, it may be necessary to provide help and documentation:
+    enable search in documentation, present documentation in context
+    \begin{itemize}
+        \item Proactive help: provide help before the user gets stuck (tutorials): Push - not relevant to user goals, pull - relevant to user goals
+        \item Reactive help: provide help when the user gets stuck (error messages, FAQ)
+    \end{itemize}
+\end{itemize}
+\section{10/14}
+Process: \\
+\tab Software Process: a set of activities and associated results that produce a software product\\
+How to develop software?\\
+\tab Discuss the software that needs to be written\\
+\tab write some code\\
+\tab test the code\\
+\tab debug the code to find causes of defects\\
+\tab fix the bugs
+Productive development: (coding, testing, making progress towards goals)\\
+Not spending effort into addressing inefficiences and following process leads to more work later on\\
+Hypothesis: Process increases efficiency and flexibility\\
+\tab Ideal curve is upfront investment in process for later returns\\
+Estimating time is hard\\
+How to measure progress?\\
+\tab Developer judgement, lines of code, functionality, quality\\
+Milestones and Deliverables make progress observable\\
+Milestone: Clear end point of a (sub)task(s)\\
+\tab For a project manager; reports, prototypes, completed subprojects\\
+Deliverables: Result for customer\\
+\tab Similar to milestones, but for customers\\
+Waterfall Model: \\
+\tab Requirements, design, implement, verification, maintenance\\
+Need to center around rapid feedback instead\\
+Lean production: adapt to variable demand\\
+\tab Build only what is needed, when it is needed\\
+\tab Use "pull" system to avoid overproduction\\
+\tab Stop to fix problems to prevent defects from propogating\\
+\tab Workers are multi-skilled and can understand the whole process; take ownership\\
+\tab \tab Just-in-time, DevOps, Shift-Left\\\\
+Agile Overview: \\
+\tab Keep a prioritized list of user stories in a backlog\\
+\tab \textbf{Product owner} sets priorities in backlog\\
+\tab Divide work into sprints (2ish weeks)\\
+\tab Conceptually, at the end of each sprint, you could ship\\
+\tab The \textbf{scrum master} keeps progress on track; removes barriers to success\\\\
+Sprint structure: \\
+\tab Start with planning meeting\\
+\tab Estimate user stories, commit to them individually\\
+\tab Daily standup meetings: what did I do yesterday, what will I do today, am I stuck\\
+\tab Then sprint review and sprint retrospective\\\\
+Sprint Review: \\
+\tab For each user story, demo\\
+\tab If acceptance criteria are met, story is done, else it goes back to the backlog\\\\
+Sprint Retrospective: \\
+\tab Discuss how the sprint went, refine iterations, processes, tools; identify and solve problems; decide on changes to improve effectiveness\\
+\section{10/16}
+Testing:\\
+\tab Defining correct behaviour\\
+Purposes of testing: \\
+\tab Find bugs\\
+\tab Prevent bugs from sneaking in when enhancing\\
+\tab Give high confidence in correctness\\
+\tab Explore class/method design\\
+\tab Specify expected behaviour\\
+Three big ideas: \\
+\tab Coverage: seek to execute all possibilities\\
+\tab Test equivalence classes: tests should all cover different things\\
+\tab Bottom-up testing: test the smallest things first, when testing things you shouldn't have to test the components\\
+Black box vs White box testing: \\
+\tab Black box: test the software without knowing the internal structure\\
+\tab \tab Not biased by implementation details, can't leverage opportunities\\
+\tab White box: test the software with knowledge of the internal structure\\
+\tab \tab Can exploit bugs, will miss "impossible" bugs\\
+Agile Testing (hierarchical, diverse): \\
+\tab 3 kinds of tests, bottom up: \\
+\tab \tab Unit tests: test individual classes and methods (task level)\\
+\tab \tab Integration tests: test how classes work together, BDD personality tests (story level)\\
+\tab \tab End-to-end scenario tests: (milestone level)\\
+Mocking as a way to test\\
+\tab Testing can only show the presence of bugs, not the absence\\
+Fuzz testing: security and robustness\\
+\tab Bugs don't always result in crashes\\
+\tab \tab Automatic oracles: sanitizers\\
+Pros: cheap to generate inputs, easy to debug when issues are found\\
+Cons: hard to know when to stop, hard to know if you've found all the bugs, random inputs don't make sense\\
+\section{10/18}
+Software Architecture:\\
+\tab High-level design of a software system\\
+\tab Structure of the system, includes software elements, externally visible properties, relationships between them\\
+Two kinds of requirements: \\
+\tab Functional requirements: what the system should do\\
+\tab Quality attributes: the degree to which the software works as needed\\
+\tab \tab Modifiability, performance, scalability, availabilty, usability, maintainability, etc.\\
+Levels of abstraction: \\
+\tab Requirements: what needs to be done\\
+\tab Architecture: how it will be done, mid-level "what"\\
+\tab OO-Design (low level): mid-level how it will be done, low-level "what"\\
+Views: \\
+\tab Different ways of looking at the same system\\
+Why document architecture?\\
+\tab Blueprint for the system, helps with maintenance\\
+\tab Documents architect's knowledge/decisions\\
+\tab Supports traceability\\
+Each view alights with a purpose\\
+\tab Only represents info relevant to the purpose\\
+\tab Different views for different reasoning models\\
+Module views (static): \\
+\tab Shows structure defined by the code\\
+\tab Modules (systems, subsystems) and their relations (dependencies)\\
+\tab Often shows decompositions (what contains what) and uses (what calls what)\\
+\tab \tab Composition: has to include the other\\
+\tab \tab Aggregation: can exist without the other\\
+\tab UML for the diagram\\
+Component views (dynamic): \\
+\tab Shows entities at runtime\\
+\tab Components (processes, runnable entities) and their connectors (data flow, messages)\\
+\tab Do not exist until program runs, can't be shown in static view\\
+Physical view (deployment): \\
+\tab Hardware structures and their components\\
+\tab What parts of the system run on which physical machines\\
+\tab How do those machines connect\\
 
 \end{document}

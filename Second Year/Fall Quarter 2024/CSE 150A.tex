@@ -82,5 +82,42 @@ Axioms of Probability:\\
 Conditional Probability: $P(X = x_i | Y = y_j)$\\
 In this case X and Y are dependent\\
 Bayes rule: $P(X = x_i | Y = y_j) = \frac{P(Y = y_j | X = x_i)P(X = x_i)}{P(Y = y_j)}$\\
+Product rule: $P(X = x_i, Y = y_j) = P(X = x_i | Y = y_j)P(Y = y_j) = P(x)P(y|x)$\\
+Marginalization: $P(X = x_i) = \sum_{j=1}^n P(X = x_i, Y = y_j)$\\
+Independence: $P(X = x_i, Y = y_j) = P(X = x_i)P(Y = y_j)$\\
+\section{10/3}
+Marginal Independence: $P(X = x_i, Y = y_j) = P(X = x_i)P(Y = y_j)$\\
+ $P(X|Y) = P(X)$\\
+  $P(Y|X) = P(Y)$\\
+Conditional Independence: $P(X,Y|E) = P(X|E)P(Y|E)$\\
+$P(X|Y,E) = P(X|E)$\\
+$P(Y|X,E) = P(Y|E)$\\
+Suppose $X_i \in \{0, 1\}$; then it requires $O(2^n)$ parameters to represent the joint distribution\\
+\tab Goals: compact representation, efficient inference\\
+Use belief to simplify the joint distribution\\
+\tab Conditional Probability Tables (CPT) represent the conditional probability of a variable given its parents\\
+\tab Any inference can be explained in terms of the joint probability, using product rule and marginalization\\
+To perform inference efficiently:\\
+\tab Visualize models as directed acyclic graphs (DAGs)\\
+\tab Exploit the graph structure to simplify and organize calculations\\
+Absent edges represent assumptions of independence\\
+Visual representation of the joint distribution is called a Bayesian Network or belief network\\
+\tab Nodes represent random variables\\
+\tab Edges represent direct dependencies\\
+\tab CPTs for each node describe how each node depends on its parents\\
+Belief network = DAG + CPTs\\
+It's always true from the product rule that $P(X_1, X_2, ..., X_n) = P(X_1)P(X_2|X_1)\cdots = \Sigma^n_{i=1}P(X_i|X_1, X_2, \ldots, X_{i-1})$\\
+But suppose in a particular domain that $P(X_i|X_1, X_2, \ldots, X_{i-1}) = P(X_i|\text{parents}(X_i))$\\
+Where parents is a subset of ${X_1, X_2, \ldots, X_{i-1}}$\\\\
+To create a belief network: \\
+Choose random variables of interest, choose ordering of the variables, and:\\
+While there are variables left, add the node $X_i$ to the network, with parents the minimum subset satisfying:\\
+$P(X_1, X_2 \ldots X_n) = \Sigma^n_{i=1}P(X_i|\text{parents}(X_i))$\\
+Define CPTs\\
+Best order is to take "root causes", then variables they influence, etc.\\
+Edge does not necessarily represent dependence, especially if a bad order is chosen\\
+DAGs encode qualitative knowledge: assumptions of marginal and conditional independence\\
+CPTs encode quantitative knowledge: numerical influences of some variables on others\\
+\section{10/8}
 
 \end{document}
