@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.7)  13 OCT 2024 16:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.7)  30 OCT 2024 13:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -702,142 +702,21 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip66
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/minted/minted.sty
-Package: minted 2023/12/18 v2.9 Yet another Pygments shim for LaTeX
- (/usr/local/texlive/2024/texmf-dist/tex/latex/fvextra/fvextra.sty
-Package: fvextra 2023/11/28 v1.6.1 fvextra - extensions and patches for fancyvrb
- (/usr/local/texlive/2024/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
-Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
-\FV@CodeLineNo=\count364
-\FV@InFile=\read3
-\FV@TabBox=\box84
-\c@FancyVerbLine=\count365
-\FV@StepNumber=\count366
-\FV@OutFile=\write4
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/upquote/upquote.sty
-Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/lineno/lineno.sty
-Package: lineno 2023/05/20 line numbers on paragraphs v5.3
-\linenopenalty=\count367
-\output=\toks50
-\linenoprevgraf=\count368
-\linenumbersep=\dimen331
-\linenumberwidth=\dimen332
-\c@linenumber=\count369
-\c@pagewiselinenumber=\count370
-\c@LN@truepage=\count371
-\c@internallinenumber=\count372
-\c@internallinenumbers=\count373
-\quotelinenumbersep=\dimen333
-\bframerule=\dimen334
-\bframesep=\dimen335
-\bframebox=\box85
-\linenoamsmath@ams@eqpen=\count374
-LaTeX Info: Redefining \\ on input line 3180.
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup11
 )
-\c@FancyVerbWriteLine=\count375
-\c@FancyVerbBufferIndex=\count376
-\c@FancyVerbBufferLength=\count377
-\c@FancyVerbBufferLine=\count378
-\c@FV@oldbufferlength=\count379
-\c@FV@TrueTabGroupLevel=\count380
-\c@FV@TrueTabCounter=\count381
-\FV@TabBox@Group=\box86
-\FV@TmpLength=\skip67
-\c@FV@HighlightLinesStart=\count382
-\c@FV@HighlightLinesStop=\count383
-\FV@LoopCount=\count384
-\FV@NCharsBox=\box87
-\FV@BreakIndent=\dimen336
-\FV@BreakIndentNChars=\count385
-\FV@BreakSymbolSepLeft=\dimen337
-\FV@BreakSymbolSepLeftNChars=\count386
-\FV@BreakSymbolSepRight=\dimen338
-\FV@BreakSymbolSepRightNChars=\count387
-\FV@BreakSymbolIndentLeft=\dimen339
-\FV@BreakSymbolIndentLeftNChars=\count388
-\FV@BreakSymbolIndentRight=\dimen340
-\FV@BreakSymbolIndentRightNChars=\count389
-\c@FancyVerbLineBreakLast=\count390
-\FV@LineBox=\box88
-\FV@LineIndentBox=\box89
-\c@FV@BreakBufferDepth=\count391
-\FV@LineWidth=\dimen341
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/shellesc.sty
-Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
-Package shellesc Info: Restricted shell escape enabled on input line 77.
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/ifplatform/ifplatform.sty
-Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
- (/usr/local/texlive/2024/texmf-dist/tex/generic/catchfile/catchfile.sty
-Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/etexcmds/etexcmds.sty
-Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
-)) (/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/ifluatex.sty
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-)
-
-Package ifplatform Warning: 
-    shell escape is disabled, so I can only detect \ifwindows.
-
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/xstring/xstring.sty (/usr/local/texlive/2024/texmf-dist/tex/generic/xstring/xstring.tex
-\xs_counta=\count392
-\xs_countb=\count393
-)
-Package: xstring 2023/08/22 v1.86 String manipulations (CT)
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/framed/framed.sty
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip68
-\fb@frw=\dimen342
-\fb@frh=\dimen343
-\FrameRule=\dimen344
-\FrameSep=\dimen345
-)
-\minted@appexistsfile=\read4
-\minted@bgbox=\box90
-\minted@code=\write5
-\c@minted@FancyVerbLineTemp=\count394
-\c@minted@pygmentizecounter=\count395
-\@float@every@listing=\toks51
-\c@listing=\count396
-)
-runsystem(mkdir -p _minted-CSE_150A)...disabled (restricted).
-
-
-
-/Users/michaelhe/Desktop/CSCode/Notes/Second Year/Fall Quarter 2024/CSE 150A.tex:30: Package minted Error: You must invoke LaTeX with the -shell-escape flag.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30 
-     
-Pass the -shell-escape flag to LaTeX. Refer to the minted.sty documentation for more information.
-
 Package translations Info: No language package found. I am going to use `english' as default language. on input line 33.
-runsystem(command -v pygmentize && touch CSE_150A.aex)...disabled (restricted).
-
-
-/Users/michaelhe/Desktop/CSCode/Notes/Second Year/Fall Quarter 2024/CSE 150A.tex:33: Package minted Error: You must have `pygmentize' installed to use this package.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.33 \begin{document}
-                     
-Refer to the installation instructions in the minted documentation for more information.
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count397
-\l__pdf_internal_box=\box91
+\l__color_backend_stack_int=\count364
+\l__pdf_internal_box=\box84
 )
 
 LaTeX Warning: Unused global option(s):
     [unboxed,cm].
 
-No file "CSE 150A".aux.
+(./CSE 150A.aux)
 \openout1 = `"CSE 150A.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
@@ -858,28 +737,26 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
 LaTeX Font Info:    ... okay on input line 33.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
 LaTeX Font Info:    ... okay on input line 33.
-(/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count398
-\scratchdimen=\dimen346
-\scratchbox=\box92
-\nofMPsegments=\count399
-\nofMParguments=\count400
-\everyMPshowfont=\toks52
-\MPscratchCnt=\count401
-\MPscratchDim=\dimen347
-\MPnumerator=\count402
-\makeMPintoPDFobject=\count403
-\everyMPtoPDFconversion=\toks53
+\scratchcounter=\count365
+\scratchdimen=\dimen331
+\scratchbox=\box85
+\nofMPsegments=\count366
+\nofMParguments=\count367
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count368
+\MPscratchDim=\dimen332
+\MPnumerator=\count369
+\makeMPintoPDFobject=\count370
+\everyMPtoPDFconversion=\toks51
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-)) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/textcomp.sty
-Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-)
-\c@lstlisting=\count404
+))
+\c@lstlisting=\count371
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -916,8 +793,10 @@ Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 33.
-\@outlinefile=\write6
-\openout6 = `"CSE 150A.out"'.
+(./CSE 150A.out) (./CSE 150A.out)
+\@outlinefile=\write4
+\openout4 = `"CSE 150A.out"'.
+
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
@@ -945,7 +824,10 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 77.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 77.
-
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 77.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
 Underfull \hbox (badness 10000) in paragraph at lines 72--88
 
  []
@@ -967,7 +849,97 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--121
 
  []
 
-[2] (./CSE 150A.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--133
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 134--144
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--171
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 172--193
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--193
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--232
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 233--312
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--312
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--312
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--312
+
+ []
+
+[5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 313--387
+
+ []
+
+[7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 388--458
+
+ []
+
+
+Overfull \hbox (3.42589pt too wide) in paragraph at lines 388--458
+\OT1/cmr/m/n/10 Asymptotically cor-rect - more data leads to bet-ter es-ti-mates: $[][]\OML/cmm/m/it/10 P[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; [] ; x[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; [] ; x[]\OT1/cmr/m/n/10 )$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--458
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--458
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 459--461
+
+ []
+
+[10] (./CSE 150A.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -979,22 +951,22 @@ Package rerunfilecheck Warning: File `"CSE 150A".out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `"CSE 150A".out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  2F43D47279320436AF035A3C8F2C3C06;537.
+(rerunfilecheck)             Before: 5E80C69AB173391793C5B6D3773D7C7F;810
+(rerunfilecheck)             After:  386F21A23DC6A07E637AF743FCF00A87;879.
  ) 
 Here is how much of TeX's memory you used:
- 43929 strings out of 474116
- 1036705 string characters out of 5743682
- 1941187 words of memory out of 5000000
- 65668 multiletter control sequences out of 15000+600000
- 564600 words of font info for 63 fonts, out of 8000000 for 9000
+ 41144 strings out of 474116
+ 973012 string characters out of 5743682
+ 1961187 words of memory out of 5000000
+ 62903 multiletter control sequences out of 15000+600000
+ 565095 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,5n,87p,796b,929s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on "CSE 150A.pdf" (2 pages, 121026 bytes).
+ 84i,15n,87p,796b,906s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on "CSE 150A.pdf" (10 pages, 207671 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
- 9 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 177 PDF objects out of 1000 (max. 8388607)
+ 133 compressed objects within 2 object streams
+ 22 named destinations out of 1000 (max. 500000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
 

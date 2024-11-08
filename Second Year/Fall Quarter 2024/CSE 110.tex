@@ -333,4 +333,224 @@ Physical view (deployment): \\
 \tab What parts of the system run on which physical machines\\
 \tab How do those machines connect\\
 
+\section{10/21}
+Reminder that software architecture is about promoting quality attributes,
+sometimes at the expense of other quality attributes
+A \textit{style} is a class of architecture with a typical structure
+\begin{itemize}
+    \item Pipes and filters: "Data flow" family of styles
+    \begin{itemize}
+        \item Ex. Compilers - language source code to compiler to intermediate code optimizer to machine code
+        \item UNIX Pipes: filters are processes (different ports), pipes are buffered streams
+        \item Difference with procedures - control is asynchronous and data-driven rather than synchronous and blocking;
+        semantics are functional rather than hierarchical, data is streamed rather than parameter/return value
+        variations include buffering, EOF behavior as opposed to binding time, exception handling, polymorphism
+        \item Analysis: promotes modifiability (can insert/remove filters, redirect pipes), reuse, and performance (parallel computing)
+        \item Inhibits usability (harder to build interactive apps this way), performance (translating data to send through pipes), cost
+        (writing filters complex due to common pipe data format), correctness (synchronizing across pipes)
+    \end{itemize}
+    \item Layered Styles: layers of useful systems, basic utility, and core level
+    \begin{itemize}
+        \item Ex. Internet protocol suite
+        \item Static entities (classes, modules)
+        \item Constraint: only invoke code at lower levels; variation is only next level down
+        \item Benefits: changes only affect layers above, not whole system, and can reuse (swap implementation of layer)
+        \item Considerations: hard to choose right layers, what layer does which code go in
+    \end{itemize}
+    \item Tiers: organize clients and servers into tiers - provide services above, rely on services below
+    \begin{itemize}
+        \item Seen in runtime view, as opposed to layers seen in module/static view
+        \item Promotes: security (user can't access data directly), performance (separate tiers on separate hardware), availabilty (replicate tiers)
+        \item Rules: Each componenet in exactly one tier, can use services in lower tier/next tier down, depending on variation, can or can't use components on same tier
+        \item Advantages: tiers reflect clean abstractions, promotes reuse
+        \item Disadvantages: unclear which tier components belont to, what if they fit multiple, performance implications motivate inappropriate connections around layers (tunneling)
+        \item Tunneling: connection between layers not next to each other - violates layering, but is convenient and can improve performance
+    \end{itemize}
+    \item Client-Server Architecture: clients know who the server is, server knows little about clients with previously agreed upon protocol
+    \begin{itemize}
+        \item Promotes: scalability (easy to add more clients, servers), modifiability (can swap out clients and servers separately)
+        \item Inhibits: reliability (server/network may be down), performance (network bandwidth, latency), security (open ports), simplicity (more failure modes to test)
+        \item Publish-Subscribe style (Implicit Invocation): publishers don't know who is subscribed
+        \begin{itemize}
+            \item Benefits: decouples publishers from subscribers, promotes reuse because adding a component just requires registering it for events
+            \item Problems: Order of event delivery not guaranteed; causes bugs when order is depended on; choose between synchronous or asynchronous event processing
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\section{10/23}
+Focus on Modifiability: before deployment\\
+Responsibilities: action, knowledge to be maintained, or decision to be carried out by software system or element of the system\\
+\tab Responsibilities are assigned to modules; what is the cost of modifiying a responsibility?\\
+\tab Coupling: cost of modifiying module depends on how tightly-coupled it is to other modules\\
+\tab \tab Reducing coupling may reduce modification costs - minimize relationships among elements not in same module, maximize relationships among elements in same module\\
+\tab \tab Cohesion: put related responsibilties in the same module\\
+\tab Maximize cohesion and minimize coupling\\
+Tactics: \\
+\tab Reduce cost of modifiying a singe responsibility by splitting it\\
+\tab \tab Split responsibility so the new modules can be modified independently; enables deferred binding (replacing a module at runtime)\\
+\tab Increase cohesion by maintaining semantic coherence and abstracting common services\\
+\tab \tab More responsibilities from one module to another, put related responsibilities together\\
+\tab Reduce coupling by using encapsulation, using a wrapper, raising the abstraction level, using an intermediary, or restricting communication paths\\
+\tab \tab Encapsulation: hide information with an interface\\
+\tab \tab Wrapper transforms invocations, difference between wrapper and encapsulation a little fuzzy\\
+\tab \tab Raise abstraction level by adding parameters to interface; makes module more abstract, enables flexibility\\
+\tab \tab Intermediary: restricts communication paths, breaks direct dependencies by adding one in between\\
+\section{10/28}
+Code Review: \\
+Why Code Review?\\
+\tab Testing has limitations: costly to get 100\% coverage; use 80/20 rule\\
+\tab Not all properties can be checked at runtime: good design, simple implementation, understandable code, follows coding conventions, UI looks as intended, follows UI guidelines, are tests adequate?\\
+Code review: systematic reading/examination of the code\\
+\tab Focused on what can't be tested\\
+\tab Usually done asynchronously, at least one is non-author, work through complex problems like design\\
+\tab Pair programming is instantaneous code review\\
+\tab Bus factor: how many people need to be hit by a bus for the project to fail\\
+Previously: formal code review (inspection)\\
+\tab Sit in meeting, read all code - effective at finding bugs, too slow for practical use\\
+\tab Modern code review: change-based code review - every change gets reviewed by someone\\
+Purposes of code review: find defects, code improvement, alternative solution, knowledge transfer, team awareness, improving dev process, share code ownership, avoid build breaks track rationale, team assessment\\
+Code review at Google: each directory is owned by some people; owners must review and approve changes\\
+\tab "Readability": some developers are "readability" certified - each change must be reviewed by someone certified in that language\\
+Create a change, preview results of static analyzers, reviewers write comments, unresolved comments must be addressed, feedback is addressed, and reviewers mark as "LGTM" (looks good to me)\\
+Few commits, few number of lines modified per change\\
+Split changes into multiple smaller commits\\
+Tone: code is team's code, not the author's code; use "we" language, not :you" language\\
+\tab Avoid blame - use "what if"s
+Subject of the review is the code itself, not the design\\
+Questions are not very helpful in code review\\
+Most useful comments: \\
+\tab Identification of functional issues (rare, bery useful)\\
+\tab Validation issues, corner cases\\
+\tab For new developers: API suggestions, design ideas, coding conventions\\
+\tab Somewhat useful: nit-picking (identifier naming, comments); refactoring ideas\\
+\tab Not useful: questions, future tasks\\
+Systematic review: \\
+\tab Checklists: what to look for\\
+\tab Specific techniques for specific issues\\
+\tab Use tools in GitHub or IDE\\
+\section{10/30}
+Integrating security into the development workflow, and technical risks and mitigations\\
+Old methods: write code, give to security people, then let operations people host it\\
+\tab Usually too late to fix security issues; security has architectural implications\\
+DevSecOps: integrate security into the development workflow\\
+Kinds of security challenges: \\
+\tab Undefined behavior - don't use unsafe languages\\
+\tab Incorrect security-related code - review, test, control changes\\
+\tab Higher-level design mistakes - architectural review, penetration testing\\
+\tab Users (social engineering) - HCI techniques, training, compromise procedures\\
+Train, define security requirements, define metrics and compliance reporting, use software composition analysis and governance, 
+perform threat modeling, use tools and automation, keep credentials safe, use continuous learning and monitoring\\
+Security requirements: \\
+\tab Legal and industry requirements\\
+\tab Internal standards and coding practices(strcpy)\\
+\tab Review of previous incidents and known threats\\
+\tab Traditional requirements analysis with security focus\\
+Metrics and Compliance reporting: \\
+\tab How will you know whether you've succeeded? Does one breach mean you've failed? Better to focus on progress than success/failure\\
+Threat modeling: \\
+Goal: enumerate all possible threats; use STRIDE model to identify threats\\
+\tab Spoofing identity: attacker pretends to be someone they are not\\
+\tab Tampering with data: changing data in the system\\
+\tab Repudiation: lying about something done\\
+\tab Information disclosure: unauthorized access to data\\
+\tab Denial of service: making the system unusable\\
+\tab Elevation of privilege: gaining access to something you shouldn't have\\
+Software composition analysis and governance:\\
+\tab Vulnerabilities in third-party libraries\\
+Use Tools and Automation: \\
+\tab Integrate tools into CI/CD pipeline\\
+\tab Must not require security expertise\\
+\tab Must avoid a high false-positive rate\\
+Keep credentials safe: \\
+\tab Scan for keys in source code\\
+\tab Put keys in a .env file\\
+\tab Put .env in .gitignore\\
+Use continuous learning and monitoring: \\
+\tab Continuous integration/delivery\\
+\tab Run analyses automatically\\
+\tab Mean time to identify, mean time to contain\\
+Top 10 Threats (OWASP)\\
+Broken access control, cryptographic failures, injection, insecure design, security misconfiguration, vulnerable and outdated components, 
+identification and authentication failures, software and data integrity failures, security logging and monitoring failures, server-side request forgery\\
+Mitigating key threats: \\
+Untrusted Data: \\
+\tab Injection attacks: validate input, avoid eval(), sanitize inputs when constructing SQL queries\\
+\tab \tab Cross site scripting attack (XSS): untrusted data enters app, data included in content sent to user\\
+\tab Bad authentication: use TLS to check server certificate, check user credentials\\
+\tab \tab Authentication vs Authorization: \\
+\tab \tab \tab Authentication: are you who you say you are?\\
+\tab \tab \tab Authorization: given who you are, are you allowed to do what you're trying to do? Needs access control\\
+\tab \tab letsencrypt.com: free certificates\\
+\tab \tab Password cracking: \\
+\tab \tab \tab Brute force to try all strings: use large space of passwords, avoid commonly used passwords\\
+\tab \tab \tab Rainbow table attack (precompute hashes of common passwords): use large space of passwords, avoid commonly used passwords\\ 
+\tab \tab \tab Salts: users with same password have different salts, so same password doesn't have same hash; random salts added to user passwords\\
+\tab \tab Passwords do not go in the repo or database! Passwords in config files, hashed passwords in database\\
+Principle of Least Privilege: \\
+\tab Only authorize access that is needed\\
+Defense in Depth: \\
+\tab Don't have just one security check; encrypt traffic and restrict access by VPN\\
+\section{11/4}
+Debugging large software systems:\\
+Avoidance path: some bugs can't be fixed by delivery date\\
+Sometimes bugs are encoded in the specifications\\
+\tab Either change the code or change the specifications\\
+Judge costs, assess risks, and measure severity\\
+Fixing bugs risks introducing regressions\\
+Bug reports shoud show how to reproduce bug, what the observed behavior is\\
+Two phases: fault localization (where bug occurs) and fault repair (what to do about it)\\
+Be deliberate: one bug at a time, write test cases, commit after each bug\\
+\tab Fault localization is most of the work\\
+\tab Come up with hypotheses, test them according to likelihood and ease of elimination\\
+\tab \tab Goal is to fix the bug while understanding no more than necessary; assuming that reading all code is impossible\\
+Test case minimization:\\
+\tab Remove all elements of the test case that are unnecessary to reproduce the bug\\
+Narrowing down the responsible code: \\
+\tab Replace modules with mock modules that do the right thing\\
+\tab Try to show the bug is in the framework you're using, or you learn what the bug actually is\\
+Divide and conquer: \\
+\tab Bug is either because component doesn't do what it's supposed to, or it's not what some other component needed\\
+\tab Be explicit about assumptions (preconditions), and expectations (postconditions)\\
+Regressions: use git bisect to fix\\
+Bad state: after doing X, some state is wrong.\\
+\tab Sprinkle assertions throughout code for X; find exactly where the state is wrong\\
+No clue where to start: search code for relevant words, ask expert, git blame\\
+Unusual situations:\\
+Heisenbugs: bugs that disappear when you try to debug them\\
+Usual suspects: race conditions (timing matters), compiler optimizations, hardware failures\\
+Careful recording: can't keep track of everything in your head:\\
+\tab Record each hypothesis, test inputs and results and conclusion\\
+\tab Change one thing at a time\\
+\section{11/6}
+\textbf{Risk} is essential to software engineering: every bug costs more to fix later, but fixing bugs may introduce new bugs\\
+Technical risks: choosing to rely on a framework that's "almost done" but runs late; rely on a platform/service/framework that does not meet needs
+/adds complexity without adding value; underestimate the complexity of your own components\\
+Financial risks: running out of money (startup), getting sued, need to give raises for retention but now can't afford to hire more people\\
+Requirements risks: releasing software that does not meet user needs (even if it's high quality), or if it frustrates users, or if it is released too late\\
+People-related risks: by choice (better job offer), by circumstance (disaster), being fired, being stolen by Management to work on a higher priority project\\
+Management-related risks: management changes priorities, de-prioritizes features you invested in, prioritizes features you didn't invest in, management turnover (spends time managing up (managing the manager))\\
+Osborne effect: announcing a product too early, causing sales of current product to drop\\
+Mythical Man Month: book by Fred Brooks\\
+\tab Brooks' Law: Adding people to a late project makes it later\\
+\tab New people consume resources getting up to speed, introduce new bugs, reintroduce old bugs, increases communication overhead\\
+Group intercommunication formula: n(n-1)/2\\
+\tab Need to keep teams small\\
+Second System Effect: the first time you design something, you know you don't know what you're doing\\
+\tab The second time, you think you know, and you fix all the things that were wrong the first time\\
+\tab The second system is the riskiest\\
+Incremental slippage: continually delaying by a day causes a year delay\\
+Awareness-Understanding matrix: \\
+\tab Aware + Understand: Known knowns: things you know you know\\
+\tab Aware + Don't Understand: Known unknowns: things you know you don't know\\
+\tab Unaware + Understand: Unknown knowns: things you aren't aware of but you know implicitly\\
+\tab Unaware + Don't Understand: Unknown unknowns: things you don't know you don't know\\
+Inherent vs Accidental complexity: complexity is a source of risk\\
+\tab Inherent complexity: complexity that is inherent to the problem - tax software has to be as complex as tax law\\
+\tab Accidental complexity: complexity that is not inherent to the problem - making the problem harder than it should be\\
+Conway's Law: Organizations which design systems are constrained to produce designs which are copies of the communication structures of these organizations\\
+\tab If you have 3 teams working on a project, there will be 3 separate modules\\
+\tab Organizational structure poses architectural risks\\
+Surfacing risks: ask team members what might go wrong (diverse team more likely to identify risks), make mitigation plans
+\section{11/8}
+
 \end{document}
